@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+    <meta charset="utf-8">
+    <title>Lane Timer</title>
+    
+  <style>
+        * {
+            font-family: 'times', monospace;
+            font-weight: 400;
+        }
+        .container {
+            width: 100%;
+            margin: 0px auto;
+        }
+        h1 {
+            text-align: left;
+        }
+        table {
+            width: 50%;
+            text-align: center;
+        }
+        th {
+            font-weight: 700;
+        }
+        td {
+            padding: 1px;
+        }      
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Range 1 - 25yds</h3>
+    <br>
+    <table border="1" cellspacing="0" id="table01">
+        <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+            <th>10</th>
+        </tr>
+        <tr>
+            <td>
+                <h2 id="timerLabel1">60:00</h2>
+                <br>
+                <input type="text"><br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start1">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset1">
+                <br>
+                <input type="checkbox" id="member" name="member">
+                <label for="member">MEMBER</label>
+            </td>
+            <td>
+                <h2 id="timerLabel2">60:00</h2>
+                <br>
+                <input type="text"><br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start2">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset2">
+                <br>
+                <input type="checkbox" id="member" name="member">
+                <label for="member">MEMBER</label>
+            </td>
+            <td>
+                <h2 id="timerLabel2">60:00</h2>
+                <br>
+                <input type="text"><br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start3">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset3">
+                <br>
+                <input type="checkbox" id="member" name="member">
+                <label for="member">MEMBER</label>
+            </td>
+            <td>
+                <h2 id="timerLabel2">60:00</h2>
+                <br>
+                <input type="text"><br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start4">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset4">
+                <br>
+                <input type="checkbox" id="member" name="member">
+                <label for="member">MEMBER</label>
+            </td>
+            <td>
+                <h2 id="timerLabel2">60:00</h2>
+                <br>
+                <input type="text"><br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start5">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset5">
+                <br>
+                <input type="checkbox" id="member" name="member">
+                <label for="member">MEMBER</label>
+            </td>
+            <td>
+                <h2 id="timerLabel1">60:00</h2>
+                <br>
+                <input type="text"><br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start6">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset6">
+                <br>
+                <input type="checkbox" id="member" name="member">
+                <label for="member">MEMBER</label>
+            </td>
+            <td>
+                <h2 id="timerLabel2">60:00</h2>
+                <br>
+                <input type="text"><br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start7">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset7">
+                <br>
+                <input type="checkbox" id="member" name="member">
+                <label for="member">MEMBER</label>
+            </td>
+            <td>
+                <h2 id="timerLabel2">60:00</h2>
+                <br>
+                <input type="text"><br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start8">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset8">
+                <br>
+                <input type="checkbox" id="member" name="member">
+                <label for="member">MEMBER</label>
+            </td>
+            <td>
+                <h2 id="timerLabel2">60:00</h2>
+                <br>
+                <input type="text"><br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start9">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset9">
+                <br>
+                <input type="checkbox" id="member" name="member">
+                <label for="member">MEMBER</label>
+            </td>
+            <td>
+                <h2 id="timerLabel2">60:00</h2>
+                <br>
+                <input type="text"><br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start10">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset10">
+                <br>
+                <input type="checkbox" id="member" name="member">
+                <label for="member">MEMBER</label>
+            </td>
+
+        </tr>
+    </table>
+    <br><br>
+        <h1>Range 2 - 25yds</h3>
+    <br>
+    <table border="1" cellspacing="0" id="table01">
+        <tr>
+            <th>21</th>
+            <th>22</th>
+            <th>23</th>
+            <th>24</th>
+            <th>25</th>
+            <th>26</th>
+            <th>27</th>
+            <th>28</th>
+            <th>29</th>
+            <th>30</th>
+        </tr>
+        <tr>
+            <td>
+                <h2 id="timerLabel1">60:00</h2>
+                <br>
+                <input type="text"><br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start21">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset21">
+                <br>
+                <input type="checkbox" id="member" name="member">
+                <label for="member">MEMBER</label>
+            </td>
+            <td>
+                <h2 id="timerLabel2">60:00</h2>
+                <br>
+                <input type="text"><br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start22">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset22">
+                <br>
+                <input type="checkbox" id="member" name="member">
+                <label for="member">MEMBER</label>
+            </td>
+            <td>
+                <h2 id="timerLabel2">60:00</h2>
+                <br>
+                <input type="text"><br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start23">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset23">
+                <br>
+                <input type="checkbox" id="member" name="member">
+                <label for="member">MEMBER</label>
+            </td>
+            <td>
+                <h2 id="timerLabel2">60:00</h2>
+                <br>
+                <input type="text"><br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start24">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset24">
+                <br>
+                <input type="checkbox" id="member" name="member">
+                <label for="member">MEMBER</label>
+            </td>
+            <td>
+                <h2 id="timerLabel2">60:00</h2>
+                <br>
+                <input type="text"><br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start25">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset25">
+                <br>
+                <input type="checkbox" id="member" name="member">
+                <label for="member">MEMBER</label>
+            </td>
+            <td>
+                <h2 id="timerLabel1">60:00</h2>
+                <br>
+                <input type="text"><br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start26">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset26">
+                <br>
+                <input type="checkbox" id="member" name="member">
+                <label for="member">MEMBER</label>
+            </td>
+            <td>
+                <h2 id="timerLabel2">60:00</h2>
+                <br>
+                <input type="text"><br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start27">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset27">
+                <br>
+                <input type="checkbox" id="member" name="member">
+                <label for="member">MEMBER</label>
+            </td>
+            <td>
+                <h2 id="timerLabel2">60:00</h2>
+                <br>
+                <input type="text"><br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start28">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset28">
+                <br>
+                <input type="checkbox" id="member" name="member">
+                <label for="member">MEMBER</label>
+            </td>
+            <td>
+                <h2 id="timerLabel2">60:00</h2>
+                <br>
+                <input type="text"><br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start29">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset29">
+                <br>
+                <input type="checkbox" id="member" name="member">
+                <label for="member">MEMBER</label>
+            </td>
+            <td>
+                <h2 id="timerLabel2">60:00</h2>
+                <br>
+                <input type="text"><br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start30">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset30">
+                <br>
+                <input type="checkbox" id="member" name="member">
+                <label for="member">MEMBER</label>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+     <h1>Range 3 - 50yds</h3>
+    <br>
+    <table border="1" cellspacing="0" id="table01">
+        <tr>
+            <th>31</th>
+            <th>32</th>
+            <th>33</th>
+            <th>34</th>
+            <th>35</th>
+            <th>36</th>
+            <th>37</th>
+            <th>38</th>
+            <th>39</th>
+            <th>40</th>
+        </tr>
+        <tr>
+            <td>
+                <h2 id="timerLabel31">60:00.00</h2>
+                <br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start31">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset31">
+            </td>
+            <td>
+                <h2 id="timerLabel32">60:00.00</h2>
+                <br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start32">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset32">
+            </td>
+            <td>
+                <h2 id="timerLabel33">60:00.00</h2>
+                <br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start33">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset33">
+            </td>
+            <td>
+                <h2 id="timerLabel34">60:00.00</h2>
+                <br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start34">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset34">
+            </td>
+            <td>
+                <h2 id="timerLabel35">60:00.00</h2>
+                <br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start35">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset35">
+            </td>
+            <td>
+                <h2 id="timerLabel36">60:00.00</h2>
+                <br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start36">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset36">
+            </td>
+            <td>
+                <h2 id="timerLabel37">60:00.00</h2>
+                <br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start37">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset37">
+            </td>
+            <td>
+                <h2 id="timerLabel38">60:00.00</h2>
+                <br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start38">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset38">
+            </td>
+            <td>
+                <h2 id="timerLabel39">60:00.00</h2>
+                <br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start39">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset39">
+            </td>
+            <td>
+                <h2 id="timerLabel40">60:00.00</h2>
+                <br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start40">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset40">
+            </td>
+        </tr>
+    </table>
+    <br><br><h1>Range 4 - 15yds</h3>
+    <br>
+    <table border="1" cellspacing="0" id="table01">
+        <tr>
+            <th>41</th>
+            <th>42</th>
+            <th>43</th>
+        </tr>
+        <tr>
+            <td>
+                <h2 id="timerLabel41">60:00.00</h2>
+                <br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start41">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset41">
+            </td>
+            <td>
+                <h2 id="timerLabel42">60:00.00</h2>
+                <br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start42">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset42">
+            </td>
+            <td>
+                <h2 id="timerLabel43">60:00.00</h2>
+                <br>
+                <input type="button" onclick="start_stop(this)" value="START" id="start43">
+                <input type="button" onclick="reset(this)" value="RESET" id="reset43">
+            </td>
+                    </tr>
+    </table>
+    <br><br>
+    <script>
+        var status_sw1 = 0;
+        var status_sw2 = 0;
+        var status_sw3 = 0;
+        var status_sw4 = 0;
+        var status_sw5 = 0;
+        var status_sw6 = 0;
+        var status_sw7 = 0;
+        var status_sw8 = 0;
+        var status_sw9 = 0;
+        var status_sw10 = 0;
+        var status_sw21 = 0;
+        var status_sw22 = 0;
+        var status_sw23 = 0;
+        var status_sw24 = 0;
+        var status_sw25 = 0;
+        var status_sw26 = 0;
+        var status_sw27 = 0;
+        var status_sw28 = 0;
+        var status_sw29 = 0;
+        var status_sw30 = 0;
+        var status_sw31 = 0;
+        var status_sw32 = 0;
+        var status_sw33 = 0;
+        var status_sw34 = 0;
+        var status_sw35 = 0;
+        var status_sw36 = 0;
+        var status_sw37 = 0;
+        var status_sw38 = 0;
+        var status_sw39 = 0;
+        var status_sw40 = 0;
+        var status_sw41 = 0;
+        var status_sw42 = 0;
+        var status_sw43 = 0;
+              
+        var time_sw1;
+        var time_sw2;
+        var time_sw3;
+        var time_sw4;
+        var time_sw5;
+        var time_sw6;
+        var time_sw7;
+        var time_sw8;
+        var time_sw9;
+        var time_sw10;
+        var time_sw21;
+        var time_sw22;
+        var time_sw23;
+        var time_sw24;
+        var time_sw25;
+        var time_sw26;
+        var time_sw27;
+        var time_sw28;
+        var time_sw29;
+        var time_sw30;
+        var time_sw31;
+        var time_sw32;
+        var time_sw33;
+        var time_sw34;
+        var time_sw35;
+        var time_sw36;
+        var time_sw37;
+        var time_sw38;
+        var time_sw39;
+        var time_sw40;
+        var time_sw41;
+        var time_sw42;
+        var time_sw43;
+         
+        var startBtn1 = document.getElementById("start1");
+        var startBtn2 = document.getElementById("start2");
+        var startBtn3 = document.getElementById("start3");
+        var startBtn4 = document.getElementById("start4");
+        var startBtn5 = document.getElementById("start5");
+        var startBtn6 = document.getElementById("start6");
+        var startBtn7 = document.getElementById("start7");
+        var startBtn8 = document.getElementById("start8");
+        var startBtn9 = document.getElementById("start9");
+        var startBtn10 = document.getElementById("start10");
+        var startBtn21 = document.getElementById("start21");
+        var startBtn22 = document.getElementById("start22");
+        var startBtn23 = document.getElementById("start23");
+        var startBtn24 = document.getElementById("start24");
+        var startBtn25 = document.getElementById("start25");
+        var startBtn26 = document.getElementById("start26");
+        var startBtn27 = document.getElementById("start27");
+        var startBtn28 = document.getElementById("start28");
+        var startBtn29 = document.getElementById("start29");
+        var startBtn30 = document.getElementById("start30");
+        var startBtn31 = document.getElementById("start31");
+        var startBtn32 = document.getElementById("start32");
+        var startBtn33 = document.getElementById("start33");
+        var startBtn34 = document.getElementById("start34");
+        var startBtn35 = document.getElementById("start35");
+        var startBtn36 = document.getElementById("start36");
+        var startBtn37 = document.getElementById("start37");
+        var startBtn38 = document.getElementById("start38");
+        var startBtn39 = document.getElementById("start39");
+        var startBtn40 = document.getElementById("start40");
+        var startBtn41 = document.getElementById("start41");
+        var startBtn42 = document.getElementById("start42");
+        var startBtn43 = document.getElementById("start43");         
+         
+        var timerLabel1 = document.getElementById("timerLabel1");
+        var timerLabel2 = document.getElementById("timerLabel2");
+        var timerLabel3 = document.getElementById("timerLabel3");
+        var timerLabel4 = document.getElementById("timerLabel4");
+        var timerLabel5 = document.getElementById("timerLabel5");
+        var timerLabel6 = document.getElementById("timerLabel6");
+        var timerLabel7 = document.getElementById("timerLabel7");
+        var timerLabel8 = document.getElementById("timerLabel8");
+        var timerLabel9 = document.getElementById("timerLabel9");
+        var timerLabel10 = document.getElementById("timerLabel10");
+        var timerLabel21 = document.getElementById("timerLabel21");
+        var timerLabel22 = document.getElementById("timerLabel22");
+        var timerLabel23 = document.getElementById("timerLabel23");
+        var timerLabel24 = document.getElementById("timerLabel24");
+        var timerLabel25 = document.getElementById("timerLabel25");
+        var timerLabel26 = document.getElementById("timerLabel26");
+        var timerLabel27 = document.getElementById("timerLabel27");
+        var timerLabel28 = document.getElementById("timerLabel28");
+        var timerLabel29 = document.getElementById("timerLabel29");
+        var timerLabel30 = document.getElementById("timerLabel30");
+        var timerLabel31 = document.getElementById("timerLabel31");
+        var timerLabel32 = document.getElementById("timerLabel32");
+        var timerLabel33 = document.getElementById("timerLabel33");
+        var timerLabel34 = document.getElementById("timerLabel34");
+        var timerLabel35 = document.getElementById("timerLabel35");
+        var timerLabel36 = document.getElementById("timerLabel36");
+        var timerLabel37 = document.getElementById("timerLabel37");
+        var timerLabel38 = document.getElementById("timerLabel38");
+        var timerLabel39 = document.getElementById("timerLabel39");
+        var timerLabel40 = document.getElementById("timerLabel40");
+        var timerLabel41 = document.getElementById("timerLabel41");
+        var timerLabel42 = document.getElementById("timerLabel42");
+        var timerLabel43 = document.getElementById("timerLabel43");
+        
+        function start_stop(obj) {
+             
+            var stopwatch = obj.id;
+             
+            if (stopwatch == 'start1') {
+                if (status_sw1 == 0) {
+                    status_sw1 = 1;
+                    timer(status_sw1, timerLabel1, 3600);
+                } else {
+                    status_sw1 = 0;
+                    time_sw1 = 0;
+                }               
+            } 
+
+            if (stopwatch == 'start2') {
+                if (status_sw2 == 0) {
+                    status_sw2 = 1;
+                    timer(status_sw2, timerLabel2, 3600);
+                } else {
+                    status_sw2 = 0;
+                    time_sw2 = 0;
+                }               
+            } 
+             
+            if (obj.value == "START") {
+                obj.value = "STOP";
+             
+            } else {
+                obj.value = "START";
+            }
+        }
+         
+         
+        function reset(obj) {
+            var stopwatch = obj.id;
+             
+            if (stopwatch == 'reset1') {
+                status_sw1 = 0;
+                time_sw1 = 0;
+                timerLabel1.innerHTML = "60:00";
+                startBtn1.value = "START";
+                clearInterval(countdown);
+            }           
+        }
+        var countdown;         
+        var timer = function(status, timerLabel, sec) {
+            if (status == 1) {
+                countdown = setInterval(function(){
+                    var min = Math.floor(sec / 60);
+                    var remSec = sec % 60;
+            
+                    if (remSec < 10) {
+                        remSec = '0' + remSec;
+                    }
+                    if (min < 10) {
+                        min = '0' + min;
+                    }
+                    timerLabel.innerHTML = min + ":" + remSec;
+
+                    if (sec > 0) {
+                        sec = sec - 1;
+                    } else {
+                        clearInterval(timer);
+                        return 'TIME IS UP';
+                    }
+                }, 1000);
+            }            
+        }        
+         
+    </script>
+    <div>
+        <style>
+            .demo {
+                width: 20%;
+                border:1px solid black;
+                border-collapse:collapse;
+                padding:none;
+            }
+            .demo th {
+                border:1px solid black;
+                padding:none;
+                background:#F0F0F0;
+            }
+            .demo td {
+                border:1px solid black;
+                padding:5px;
+            }
+        </style>
+        <table class="demo">
+            <caption><h1>Waiting List</h1></caption>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Notes</th>
+                    </tr>	
+                </thead>	
+                <tbody style="text-align: center;">	
+                    <tr>
+                        <td><input type="text" size=100%></td>
+                        <td><input type="text" size=100%></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" size=100%></td>
+                        <td><input type="text" size=100%></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" size=100%></td>
+                        <td><input type="text" size=100%></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" size=100%></td>
+                        <td><input type="text" size=100%></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" size=100%></td>
+                        <td><input type="text" size=100%></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" size=100%></td>
+                        <td><input type="text" size=100%></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" size=100%></td>
+                        <td><input type="text" size=100%></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" size=100%></td>
+                        <td><input type="text" size=100%></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" size=100%></td>
+                        <td><input type="text" size=100%></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" size=100%></td>
+                        <td><input type="text" size=100%></td>
+                    </tr>
+                <tbody>
+            </table>
+    </div>
+</div>
+</body>
+</html>

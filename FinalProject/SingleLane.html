@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+    <meta charset="utf-8">
+    <title>Lane Timer</title>
+    
+  <style>
+        * {
+            font-family: 'times', monospace;
+            font-weight: 400;
+        }
+        .container {
+            width: 100%;
+            margin: 0px auto;
+        }
+        h1 {
+            text-align: left;
+        }
+        table {
+            width: 50%;
+            text-align: center;
+        }
+        th {
+            font-weight: 700;
+        }
+        td {
+            padding: 1px;
+        }      
+    </style>
+</head>
+<body>
+        <div class="container">
+            <h1>Range 1 - 25yds</h3>
+            <br>
+            <table border="1" cellspacing="0" id="table01">
+                <tr>
+                    <th>1</th>
+                    <th>2</th>
+                </tr>
+                <tr>
+                    <td>
+                        <h2 id="timerLabel1">60:00</h2>
+                        <br>
+                        <input type="text"><br>
+                        <input type="button" onclick="start_stop(this)" value="START" id="start1">
+                        <input type="button" onclick="reset(this)" value="RESET" id="reset1">
+                        <br>
+                        <input type="checkbox" id="member" name="member">
+                        <label for="member">MEMBER</label>
+                    </td>
+                    <td>
+                        <h2 id="timerLabel2">60:00</h2>
+                        <br>
+                        <input type="text"><br>
+                        <input type="button" onclick="start_stop(this)" value="START" id="start2">
+                        <input type="button" onclick="reset(this)" value="RESET" id="reset2">
+                        <br>
+                        <input type="checkbox" id="member" name="member">
+                        <label for="member">MEMBER</label>
+                    </td>
+                    
+                </tr>
+            </table>
+
+            <br><br>
+            <script>
+
+                var status_sw1 = 0;
+                var status_sw2 = 0;
+                            
+                var time_sw1;
+                var time_sw2;
+                        
+                var startBtn1 = document.getElementById("start1");
+                var startBtn2 = document.getElementById("start2");
+                        
+                var timerLabel1 = document.getElementById("timerLabel1");
+                var timerLabel2 = document.getElementById("timerLabel2");
+                        
+                function start_stop(obj) {
+                    
+                    var stopwatch = obj.id;
+                    
+                    if (stopwatch == 'start1') {
+                        if (status_sw1 == 0) {
+                            status_sw1 = 1;
+                            timer(status_sw1, timerLabel1, 3600);
+                        } else {
+                            status_sw1 = 0;
+                            time_sw1 = 0;
+                        }               
+                    } 
+
+                    if (stopwatch == 'start2') {
+                        if (status_sw2 == 0) {
+                            status_sw2 = 1;
+                            timer(status_sw2, timerLabel2, 3600);
+                        } else {
+                            status_sw2 = 0;
+                            time_sw2 = 0;
+                        }               
+                    } 
+                    
+                    if (obj.value == "START") {
+                        obj.value = "STOP";
+                    
+                    } else {
+                        obj.value = "START";
+                    }
+                }
+                
+                
+                function reset(obj) {
+                    var stopwatch = obj.id;
+                    
+                    if (stopwatch == 'reset1') {
+                        status_sw1 = 0;
+                        time_sw1 = 0;
+                        timerLabel1.innerHTML = "60:00";
+                        startBtn1.value = "START";
+                        clearInterval(countdown);
+                    }           
+                }
+                var countdown;         
+                var timer = function(status, timerLabel, sec) {
+                    if (status == 1) {
+                        countdown = setInterval(function(){
+                            var min = Math.floor(sec / 60);
+                            var remSec = sec % 60;
+                    
+                            if (remSec < 10) {
+                                remSec = '0' + remSec;
+                            }
+                            if (min < 10) {
+                                min = '0' + min;
+                            }
+                            timerLabel.innerHTML = min + ":" + remSec;
+
+                            if (sec > 0) {
+                                sec = sec - 1;
+                            } else {
+                                clearInterval(timer);
+                                return 'TIME IS UP';
+                            }
+                        }, 1000);
+                    }            
+                }        
+                
+            </script>
+            
+        </div>
+</body>
+</html>
